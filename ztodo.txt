@@ -1,0 +1,23 @@
+Step-1 : Update Dockerfile
+Step-2 : RUN CMD := docker build -t <container-name> . 
+Step-3 : [Local docker] RUN CMD := docker run -dp 127.0.0.1:3000:3000 <container-name>
+         Use "docker ps" to see running list containers
+         Use "docker rm <container-name>" to remove a container 
+Step-4 : [Docker Login]
+         docker login -u karthirit
+         username: karthirit | password : karthi1234
+Step-5 : [Docker Hub Push]docker
+         docker tag node-app karthirit/microservices-app
+         docker push karthirit/microservices-app:latest
+Step-6 : [Deploying using PlaywithDocker]
+         docker run -dp 0.0.0.0:3000:3000 karthirit/microservices-app:latest
+
+--------------------------------------------
+docker build -t node-app .
+docker run -dp 127.0.0.1:3000:3000 node-app
+
+docker tag node-app karthirit/microservices-app
+docker push karthirit/microservices-app
+
+docker run -dp 0.0.0.0:3000:3000 karthirit/microservices-app:latest
+
